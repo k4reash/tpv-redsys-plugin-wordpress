@@ -163,53 +163,52 @@ class TPV_Redsys {
         // Mostrar formulario
         ob_start();
         ?>
-        <div class="tpv-full-page">
-            <div class="tpv-container">
-                <h1><?php echo esc_html($atts['title']); ?></h1>
-                
-                <?php echo $result_message; ?>
-                <?php echo $content ? '<div>' . $content . '</div>' : ''; ?>
+
+        <div class="tpv-container">
+            <h1><?php echo esc_html($atts['title']); ?></h1>
             
-            <form id="tpv_form" class="tpv-form">
-                <div class="form-group">
-                    <label for="orderConcepto">Concepto del pago:</label>
-                    <input type="text" id="orderConcepto" name="concepto" value="<?php echo esc_attr($atts['concepto']); ?>" 
-                           placeholder="Concepto del pago" maxlength="125" />
-                    <p class="description">Descripción que aparecerá en el extracto bancario</p>
-                </div>
-                
-                <div class="form-group">
-                    <label for="amountTPV">Importe a cobrar (€):</label>
-                    <input type="number" step="0.01" id="amountTPV" name="c" value="<?php echo esc_attr($atts['c']); ?>" 
-                           placeholder="0.00" min="0.01" max="99999.99" />
-                    <p class="description">Introduce el importe con decimales (ej: 25.50)</p>
-                </div>
-                
-                <input type="hidden" name="action" value="tpv_redsys_ajax" />
-                <input type="hidden" name="noncesecure" value="<?php echo wp_create_nonce('tpv_redsys_nonce'); ?>" />
-                
-                <?php if ($atts['url_ok']): ?>
-                <input type="hidden" name="url_ok" value="<?php echo esc_attr($atts['url_ok']); ?>" />
-                <?php endif; ?>
-                
-                <?php if ($atts['url_ko']): ?>
-                <input type="hidden" name="url_ko" value="<?php echo esc_attr($atts['url_ko']); ?>" />
-                <?php endif; ?>
-                
-                <button type="submit" id="form_tpv_submit" class="pay-button">
-                    🔒 Proceder al Pago
-                </button>
-            </form>
+            <?php echo $result_message; ?>
+            <?php echo $content ? '<div>' . $content . '</div>' : ''; ?>
+        
+        <form id="tpv_form" class="tpv-form">
+            <div class="form-group">
+                <label for="orderConcepto">Concepto del pago:</label>
+                <input type="text" id="orderConcepto" name="concepto" value="<?php echo esc_attr($atts['concepto']); ?>" 
+                        placeholder="Concepto del pago" maxlength="125" />
+                <p class="description">Descripción que aparecerá en el extracto bancario</p>
+            </div>
             
-            <div class="tpv-info">
-                <h3>Información importante:</h3>
-                <ul>
-                    <li>El pago se procesará de forma segura a través de Redsys</li>
-                    <li>Acepta tarjetas Visa, Mastercard y otras principales</li>
-                    <li>La transacción es completamente segura</li>
-                </ul>
+            <div class="form-group">
+                <label for="amountTPV">Importe a cobrar (€):</label>
+                <input type="number" step="0.01" id="amountTPV" name="c" value="<?php echo esc_attr($atts['c']); ?>" 
+                        placeholder="0.00" min="0.01" max="99999.99" />
+                <p class="description">Introduce el importe con decimales (ej: 25.50)</p>
             </div>
-            </div>
+            
+            <input type="hidden" name="action" value="tpv_redsys_ajax" />
+            <input type="hidden" name="noncesecure" value="<?php echo wp_create_nonce('tpv_redsys_nonce'); ?>" />
+            
+            <?php if ($atts['url_ok']): ?>
+            <input type="hidden" name="url_ok" value="<?php echo esc_attr($atts['url_ok']); ?>" />
+            <?php endif; ?>
+            
+            <?php if ($atts['url_ko']): ?>
+            <input type="hidden" name="url_ko" value="<?php echo esc_attr($atts['url_ko']); ?>" />
+            <?php endif; ?>
+            
+            <button type="submit" id="form_tpv_submit" class="pay-button">
+                🔒 Proceder al Pago
+            </button>
+        </form>
+        
+        <div class="tpv-info">
+            <h3>Información importante:</h3>
+            <ul>
+                <li>El pago se procesará de forma segura a través de Redsys</li>
+                <li>Acepta tarjetas Visa, Mastercard y otras principales</li>
+                <li>La transacción es completamente segura</li>
+            </ul>
+        </div>
         </div>
         
         <script>
@@ -683,16 +682,6 @@ add_action('wp_loaded', function() {
 body {
     margin: 0;
     padding: 0;
-}
-
-.tpv-full-page {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #f5f5f5;
-    padding: 20px;
-    box-sizing: border-box;
 }
 
 .tpv-container {
