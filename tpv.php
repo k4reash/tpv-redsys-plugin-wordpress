@@ -195,10 +195,11 @@ class TPV_Redsys {
             <?php if ($atts['url_ko']): ?>
             <input type="hidden" name="url_ko" value="<?php echo esc_attr($atts['url_ko']); ?>" />
             <?php endif; ?>
-            
-            <button type="submit" id="form_tpv_submit" class="pay-button">
+            <div class="form-button">
+                <button type="submit" id="form_tpv_submit" class="pay-button">
                 🔒 Proceder al Pago
             </button>
+            </div>
         </form>
         
         <div class="tpv-info">
@@ -736,6 +737,10 @@ body {
 
 .pay-button:hover {
     background: #005a87;
+}
+
+.form-button {
+    text-align: center;
 }
 
 .alert {
