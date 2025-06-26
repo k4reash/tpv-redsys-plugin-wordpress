@@ -452,8 +452,6 @@ class TPV_Redsys {
         // Crear página de éxito TPV
         $success_page_title = 'Pago Exitoso - TPV';
         $success_page_content = '
-        <div class="tpv-full-page">
-            <div class="tpv-container">
                 <div class="alert alert-success">
                     <h2>🎉 ¡Pago realizado con éxito!</h2>
                     <p>Su transacción ha sido procesada correctamente.</p>
@@ -463,28 +461,9 @@ class TPV_Redsys {
                         🔄 Realizar otro pago
                     </a>
                 </div>
-            </div>
-        </div>
         
         <style>
         body { margin: 0; padding: 0; }
-        .tpv-full-page { 
-            min-height: 100vh; 
-            display: flex; 
-            align-items: center; 
-            justify-content: center; 
-            background: #f5f5f5; 
-            padding: 20px; 
-            box-sizing: border-box; 
-        }
-        .tpv-container { 
-            max-width: 600px; 
-            width: 100%; 
-            padding: 30px; 
-            background: #fff; 
-            border-radius: 10px; 
-            box-shadow: 0 0 20px rgba(0,0,0,0.1); 
-        }
         .alert { padding: 15px; margin: 20px 0; border-radius: 5px; }
         .alert-success { background: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
         .pay-button { background: #007cba; color: white; padding: 15px 30px; border: none; border-radius: 5px; font-size: 18px; cursor: pointer; text-decoration: none; }
@@ -507,8 +486,6 @@ class TPV_Redsys {
         // Crear página de error TPV
         $error_page_title = 'Error en el Pago - TPV';
         $error_page_content = '
-        <div class="tpv-full-page">
-            <div class="tpv-container">
                 <div class="alert alert-error">
                     <h2>❌ Error en el pago</h2>
                     <p>Lo sentimos, no se pudo procesar su transacción.</p>
@@ -519,28 +496,10 @@ class TPV_Redsys {
                         🔄 Intentar de nuevo
                     </a>
                 </div>
-            </div>
-        </div>
+
         
         <style>
         body { margin: 0; padding: 0; }
-        .tpv-full-page { 
-            min-height: 100vh; 
-            display: flex; 
-            align-items: center; 
-            justify-content: center; 
-            background: #f5f5f5; 
-            padding: 20px; 
-            box-sizing: border-box; 
-        }
-        .tpv-container { 
-            max-width: 600px; 
-            width: 100%; 
-            padding: 30px; 
-            background: #fff; 
-            border-radius: 10px; 
-            box-shadow: 0 0 20px rgba(0,0,0,0.1); 
-        }
         .alert { padding: 15px; margin: 20px 0; border-radius: 5px; }
         .alert-error { background: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
         .pay-button { background: #007cba; color: white; padding: 15px 30px; border: none; border-radius: 5px; font-size: 18px; cursor: pointer; text-decoration: none; }
